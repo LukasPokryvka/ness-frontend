@@ -1,0 +1,28 @@
+/* Laptop version */
+
+@media screen and (max-width: 1024px) {
+    .headerSelfie :nth-child(3) {
+        display: none
+    }
+}
+
+
+/* Tablet version */
+
+@media screen and (max-width: 898px) {
+    .headerSelfie :nth-child(2),
+    .headerSelfie :nth-child(3) {
+        display: none
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .headerSelfie {
+        display: none;
+    }
+}
+
+
+/* Mobil version */
+
+@media screen and (max-width: 500px) {}

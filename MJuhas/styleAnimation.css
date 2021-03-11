@@ -1,0 +1,21 @@
+.activeSelfie {
+    position: relative;
+    animation-name: activeSelfie;
+    animation-duration: 3s;
+    animation-timing-function: linear
+}
+
+@keyframes activeSelfie {
+    0% {
+        left: 68%;
+        top: 0px;
+        opacity: 0;
+        transform: rotate(0deg)
+    }
+    100% {
+        left: 0;
+        top: 0px;
+        opacity: 1;
+        transform: rotate(-360deg)
+    }
+}
