@@ -59,7 +59,8 @@ main h3 {
 }
 
 .wrap {
-    display: flex
+    display: flex;
+    margin: 8px 0px;
 }
 
 .wrapLeft {
