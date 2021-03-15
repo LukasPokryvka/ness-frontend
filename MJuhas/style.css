@@ -1,6 +1,7 @@
 body {
     margin: 0px;
     padding: 0px;
+    background-image: linear-gradient(to bottom, #051937, #004d7a, #008793, #00bf72, #a8eb12);
 }
 
 header,
@@ -14,30 +15,28 @@ footer {
 
 header {
     display: flex;
+    padding-bottom: 60px;
 }
 
 .headerInfo {
-    padding-right: 15px;
+    max-width: 360px;
+    padding-right: 60px;
 }
 
 .headerSelfie {
-    display: flex;
-    width: 70%;
-    padding-top: 60px;
-    /*
-        border: 1px solid red
-    */
+    padding: 20px 10px 0px 10px;
+    width: 200px;
+    height: 200px;
 }
 
 .selfie {
-    padding: 0 10px;
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    border-radius: 25px;
 }
 
 thead p {
-    color: cornflowerblue;
+    color: #051937;
     font-size: 40px;
     font-weight: bolder;
 }
@@ -50,7 +49,7 @@ main h1 {
 
 main p,
 main h3 {
-    margin: 5px 0 0 20px;
+    margin: 0px;
 }
 
 .logo {
@@ -61,4 +60,33 @@ main h3 {
 
 .wrap {
     display: flex
+}
+
+.wrapLeft {
+    margin: auto 5px;
+}
+
+.wrapCenter {
+    margin: auto 5px;
+    padding-left: 20px;
+}
+
+.wratRight {
+    margin: auto 5px;
+}
+
+section:last-of-type .wrapCenter {
+    width: 150px;
+}
+
+.starGray {
+    height: 25px;
+    width: 25px;
+    fill: gray;
+}
+
+.starGold {
+    width: 25px;
+    height: 25px;
+    fill: gold;
 }

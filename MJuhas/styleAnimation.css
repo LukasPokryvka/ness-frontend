@@ -1,38 +1,36 @@
 .activeSelfie:nth-of-type(1) {
-    position: relative;
-    animation: activeSelfie 3s 0s;
+    position: absolute;
+    visibility: hidden;
+    animation: activeSelfie 8s infinite;
 }
 
 .activeSelfie:nth-of-type(2) {
-    position: relative;
-    animation: activeSelfie 3s 2s, maskSelfie 2s;
+    position: absolute;
+    visibility: hidden;
+    ;
+    animation: activeSelfie 8s 2s infinite;
 }
 
 .activeSelfie:nth-of-type(3) {
-    position: relative;
-    animation: activeSelfie 3s 4s, maskSelfie 4s;
+    position: absolute;
+    visibility: hidden;
+    animation: activeSelfie 8s 4s infinite;
+}
+
+.activeSelfie:nth-of-type(4) {
+    position: absolute;
+    visibility: hidden;
+    animation: activeSelfie 8s 6s infinite;
 }
 
 @keyframes activeSelfie {
-    from {
-        left: 80%;
-        top: 0;
-        opacity: 0;
-        transform: rotate(0deg)
+    0% {
+        visibility: visible
     }
-    to {
-        left: 0%;
-        top: 0;
-        opacity: 1;
-        transform: rotate(-360deg)
+    25% {
+        visibility: hidden
     }
-}
-
-@keyframes maskSelfie {
-    from {
-        opacity: 0
-    }
-    to {
-        opacity: 0
+    100% {
+        visibility: hidden
     }
 }

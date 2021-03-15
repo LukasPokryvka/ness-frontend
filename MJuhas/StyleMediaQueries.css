@@ -1,28 +1,12 @@
-/* Laptop version */
-
-@media screen and (max-width: 1024px) {
-    .headerSelfie :nth-child(3) {
-        display: none
+@media screen and (max-width: 800px) {
+    header {
+        display: block;
+        padding-bottom: 20px;
     }
-}
-
-
-/* Tablet version */
-
-@media screen and (max-width: 898px) {
-    .headerSelfie :nth-child(2),
-    .headerSelfie :nth-child(3) {
-        display: none
-    }
-}
-
-@media screen and (max-width: 768px) {
     .headerSelfie {
+        margin: 0 auto;
+    }
+    .wratRight {
         display: none;
     }
 }
-
-
-/* Mobil version */
-
-@media screen and (max-width: 500px) {}
