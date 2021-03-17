@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;800&display=swap');
-
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -8,137 +7,105 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-body{
-
+body {
     background: #ecedf0;
     font-size: 14px;
     line-height: 22px;
     color: #555555
-    
 }
 
-.bold{
-
+.bold {
     font-weight: 800px;
     font-size: 20px;
     text-transform: uppercase;
+}
 
-}  
-
-.regular{
-
+.regular {
     font-weight: 100px;
     font-size: 20px;
+}
 
-}  
-
-
-.resume{
+.resume {
     width: 800px;
     height: auto;
     display: flex;
-
     margin: 50px auto;
 }
 
-.resume .resume_left{
-
+.resume .resume_left {
     width: 300px;
     background: #ecedf0;
-    
 }
 
-.resume .resume_left .photo{
-
+.resume .resume_left .photo {
     width: 100%;
     height: 135px;
     margin-top: 20px;
-    
 }
 
-.resume .resume_left .photo img{
-
+.resume .resume_left .photo img {
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 50%;
-
 }
 
-.resume .resume_left .information{
-
+.resume .resume_left .information {
     padding: 0 25px;
-
-
 }
 
-.resume .resume_left .myProjects{
-
+.resume .resume_left .myProjects {
     padding: 0 25px;
-
 }
 
-.resume .resume_left .experience{
-
+.resume .resume_left .experience {
     padding: 0 25px;
-
 }
 
-.resume .resume_left .langueage{
-
+.resume .resume_left .langueage {
     padding: 0 25px;
-
 }
 
-.resume .title{
-
+.resume .title {
     margin-bottom: 10px;
     margin-top: 50px;
     color: #866539;
-
 }
 
-.content .normalText{
+.content .normalText {
     color: rgb(75, 70, 70);
 }
 
-.content .subTitle{
+.content .subTitle {
     color: rgb(75, 70, 70);
     font-weight: bold;
 }
 
-.resume .resume_left ul li{
+.resume .resume_left ul li {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
 }
 
-.resume .resume_left ul li :last-child{
+.resume .resume_left ul li :last-child {
     margin-bottom: 0px;
 }
 
-.resume .resume_left ul li .icon{
-    
+.resume .resume_left ul li .icon {
     color: #866539;
     margin-right: 15px;
     position: relative;
-
 }
 
-.resume .resume_left .experience ul li{
-
+.resume .resume_left .experience ul li {
     justify-content: space-between;
-
 }
 
-.resume .resume_left .experience ul li .normalText{
-
-   width: 25%;
-
+.resume .resume_left .experience ul li .normalText {
+    width: 25%;
 }
 
-.resume .resume_left .experience ul li .progress{
-
+.resume .resume_left .experience ul li .progress {
     width: 60%;
     margin: 0 5px;
     height: 5px;
@@ -146,56 +113,62 @@ body{
     position: relative;
 }
 
-.resume .resume_left .experience ul li .skill_per{
-width: 15%;
+.resume .resume_left .experience ul li .skill_per {
+    width: 15%;
 }
 
-.resume .resume_left .experience ul li .progress span{
+.resume .resume_left .experience ul li .progress span {
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
     background: #866539;
-    }
+}
 
-.resume .resume_right{
+.resume .resume_right {
     width: 650px;
     padding: 55px;
 }
 
-.resume .resume_right .name{
+.resume .resume_right .name {
     font-size: 33px;
 }
 
-.resume .resume_right .aboutMe{
+.resume .resume_right .aboutMe {
     padding: 77px 0px 0px 01px;
 }
 
-
-
-.resume_right .section{
+.resume_right .section {
     padding-top: 5px;
     padding-bottom: 20px;
-    
 }
 
-.resume_right .date{
+.resume_right .date {
     padding-top: 5px;
-    
-    
 }
 
-.resume_right .info{
+.resume_right .info {
     padding-top: 5px;
 }
 
 .resume .resume_right .education ul li:before,
-.resume .resume_right .practical ul:before{
+.resume .resume_right .practical ul:before {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 6px;
     height: 6px;
+}
 
+@media screen and (max-width: 800px) {
+    .resume {
+        display: block;
+    }
+    .photo {
+        display: none;
+    }
+    .information .content {
+        display: none;
+    }
 }

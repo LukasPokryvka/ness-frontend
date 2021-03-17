@@ -6,7 +6,13 @@
     .headerSelfie {
         margin: 0 auto;
     }
-    .wratRight {
+    .wrap {
+        display: block;
+    }
+    .wrapLeft {
+        margin: auto 20px;
+    }
+    .wrapRight {
         display: none;
     }
 }
