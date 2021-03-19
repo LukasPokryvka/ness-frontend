@@ -43,6 +43,10 @@ nav a:hover {
     }
 }
 
+.icon {
+    height: 1em;
+}
+
 h1 {
     size: 4px;
 }
