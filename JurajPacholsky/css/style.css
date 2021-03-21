@@ -165,10 +165,5 @@ body {
     .resume {
         display: block;
     }
-    .photo {
-        display: none;
-    }
-    .information .content {
-        display: none;
-    }
+ 
 }
