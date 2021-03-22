@@ -117,4 +117,32 @@ footer a:hover {
 
 h1 {
     text-align: center;
+    text-transform: capitalize;
+}
+
+section {
+    margin: 0em 3em;
+}
+
+th {
+    vertical-align: top;
+    text-align: left;
+    padding-right: 0.5em;
+    min-width: 100px;
+}
+
+td>div:first-child {
+    font-weight: bold;
+}
+
+td>div:nth-child(2) {
+    font-style: italic;
+}
+
+td>ul:nth-child(3) {
+    margin-top: 0;
+}
+
+.table-head {
+    font-size: 1.2em;
 }
