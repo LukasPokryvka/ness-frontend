@@ -42,6 +42,7 @@ nav a:hover {
     nav,
     nav a {
         float: none;
+        border-bottom: 1px solid #bbb;
     }
 }
 
@@ -89,12 +90,12 @@ iframe.hobby-media {
 
 @media screen and (max-width: 700px) {
     .hobby-container {
-        display: block;
-        width: 100%;
+        flex-direction: column;
     }
     .hobby-item {
         display: block;
-        width: 90%;
+        width: 100%;
+        padding: 0;
     }
     iframe.hobby-media {
         height: 300px;
