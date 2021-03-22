@@ -49,6 +49,15 @@ nav a:hover {
     height: 1em;
 }
 
+div.links a {
+    color: #00539C;
+    text-decoration: none;
+}
+
+div.links a:hover {
+    color: black;
+}
+
 .hobby-row {
     display: flex;
     flex-direction: row;
