@@ -96,6 +96,14 @@ figcaption {
     font-size: 1.1rem;
 }
 
+.up-arrow {
+    display: none;
+    position: fixed;
+    width: 40px;
+    bottom: 40px;
+    right: 10px;
+}
+
 @media screen and (max-width: 700px) {
     .hobby-container {
         flex-direction: column;
@@ -107,6 +115,9 @@ figcaption {
     }
     iframe.hobby-media {
         height: 300px;
+    }
+    .up-arrow {
+        display: inherit;
     }
 }
 
