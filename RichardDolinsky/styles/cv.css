@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
+    font-size: 20px;
+    
+  }
+
+  body {
+    background-color: rgb(177 177 177 / 57%);
+    font-size: 14px;
+    line-height: 22px;
+    color: #000000;
+  }
+p {
+    padding-left: 20px;
+}
+
+.textovka {
+  float: auto;
+  width: 120px;
+  
+
+}
+
+.tabulkaMien img {
+    width: 120px;
+    height: 80px;
+    padding-left: 30px;
+}
+.date {
+    padding-left: 20px;
+}
+  nav {
+    width: 100%;
+    height: 100px;
+    background-color: rgb(36, 130, 197);
+    margin: 0;
+    /* margin-left: 15px; */
+    padding: 0;
+    
+}
+ul li a {
+    text-decoration: none;
+    font-size: 25px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 800;
+    color: rgb(220, 233, 220);
+    padding: 0 0px;
+    background-color: rgb(36, 130, 197);
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 0 2pt rgb(200, 192, 192);
+    
+    /* align-items:center; */
+  /* justify-content: center; */
+    
+    
+}
+.mojaFotka  {
+  /* right: 10px; */
+  /* top: 8px; */
+  width: 33.33%;
+  float: right;
+  /* height: 150px; */
+/* position: relative; */
+  /* background-color: blueviolet; */
+  
+}
+
+/* TEXT OMNE VLAVO  */
+.aboutMe {
+  /* background-color: chartreuse; */
+  float: left;
+  /* padding-left: 50px; */
+  width: 60%;
+}
+.textovka {
+  float: auto;
+  /* padding-left: 150px; */
+  width: 33.33%;
+}
+
+
+.mojaFotka img {
+
+  width: 180px;
+    height: 180px;
+    float: left;
+    padding-left: 0px;
+    /* float: left; */
+
+}
+.rozdelovac {
+  float: inline-end;
+  /* width: 120px; */
+  /* height: 80px; */
+
+}
+
+a:hover {
+    color: rgba(240, 235, 235, 0.966);
+    background-color: #00e7ff61;
+  }
+header li {
+    padding-left: 25px;
+    list-style: none;
+    display: inline-block;
+    line-height: 100px;
+}
+.info {
+  /* background-color: rgb(122, 57, 57); */
+  padding-left: 10px;
+  margin-left: -50px;
+}
+.resume {
+  background-color: rgb(255, 255, 255);
+  margin-left: 350px;
+  margin-right: 350px;
+  margin-top: 50px;
+
+}
+.resume .date {
+  margin-left: 0px;
+  color: rgb(6, 14, 14);
+  padding-left: 0px;
+}
+
+.resume ul {
+  padding-left: 50px;
+}
+
+
+
