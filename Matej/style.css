@@ -119,6 +119,8 @@ a {
     margin-top: -250px;
     font-size: 15px;
     font-family: 'Dosis', sans-serif;
+    width: 50%;
+    height: 50%;
 }
 .praca, .vucke, .mc, .engage, .ness, .zaluby, .hana{
     margin-top: 200px;
