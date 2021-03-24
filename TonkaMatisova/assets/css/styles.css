@@ -1,3 +1,7 @@
+html {
+    font-size: 16px;
+}
+
 body {
     font-family: 'Roboto Condensed', sans-serif;
     margin: 0;
@@ -38,10 +42,11 @@ nav a:hover {
     background-color: #fff
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 500px) {
     nav,
     nav a {
         float: none;
+        border-bottom: 1px solid #bbb;
     }
 }
 
@@ -87,17 +92,32 @@ iframe.hobby-media {
     align-self: center;
 }
 
+figcaption {
+    font-size: 1.1rem;
+}
+
+.up-arrow {
+    display: none;
+    position: fixed;
+    width: 40px;
+    bottom: 40px;
+    right: 10px;
+}
+
 @media screen and (max-width: 700px) {
     .hobby-container {
-        display: block;
-        width: 100%;
+        flex-direction: column;
     }
     .hobby-item {
         display: block;
-        width: 90%;
+        width: 100%;
+        padding: 0;
     }
     iframe.hobby-media {
         height: 300px;
+    }
+    .up-arrow {
+        display: inherit;
     }
 }
 
@@ -153,5 +173,5 @@ td>ul:nth-child(3) {
 }
 
 .table-head {
-    font-size: 1.2em;
+    font-size: 1.2rem;
 }
