@@ -107,3 +107,19 @@ a {
 .pocet, .cele_meno {
     font-weight: 600;
 }
+.mesto {
+
+}
+.galery_foto {
+    padding: 25px;
+
+}
+.koment {
+    margin-left: 400px;
+    margin-top: -250px;
+    font-size: 15px;
+    font-family: 'Dosis', sans-serif;
+}
+.praca, .vucke, .mc, .engage, .ness, .zaluby{
+    margin-top: 200px;
+}
