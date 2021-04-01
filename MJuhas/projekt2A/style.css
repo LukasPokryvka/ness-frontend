@@ -1,0 +1,43 @@
+body {
+    background-color: rgb(155, 155, 155);
+}
+
+.card {
+    width: 500px;
+    background-color: rgb(233, 251, 183);
+    margin: 50px auto;
+    padding: 50px;
+    border-radius: 25px;
+}
+
+td {
+    padding: 5px;
+}
+
+input {
+    margin: 10px 0px;
+    padding: 0 15px;
+    width: 200px;
+    height: 30px;
+    border-radius: 25px;
+    outline-style: none;
+}
+
+li:before {
+    content: "toto je riadok";
+}
+
+button {
+    display: block;
+    margin: 0px auto;
+    outline-style: none;
+    background-color: seagreen;
+    color: honeydew;
+    font-size: 25px;
+    border-radius: 12.5px;
+    border: 1px solid green
+}
+
+button:hover {
+    background-color: tomato
+}
