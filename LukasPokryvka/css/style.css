@@ -371,7 +371,6 @@ aside > div:hover {
   transform: scale(1.05);
 }
 
-aside > div,
-header img {
+aside > div {
   transition: all 0.2s ease-in-out;
 }
