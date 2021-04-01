@@ -1,0 +1,44 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js"></script>
+    <title>Bill calculation</title>
+</head>
+
+<body>
+    <div class="card">
+        <table>
+            <tr>
+                <td>How much was your bill</td>
+                <td><input type="text" name="bill" id="bill"></td>
+            </tr>
+            <tr>
+                <td>How was your service ?</td>
+                <td>
+                    <select id="service" name="serviceList">
+                    <option value="5"> 5 % </option>
+                    <option value="10"> 10 %</option>
+                    <option value="15"> 15 % </option>
+                    <option value="20"> 20 %</option>
+                  </select>
+                </td>
+            </tr>
+            <tr>
+                <td>How many people are sharing the bill?</td>
+                <td><input type="number" name="people" id="people"></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button onclick="handleOnClick()">Calculate</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+
+</html>
