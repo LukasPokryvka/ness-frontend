@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomeWork_Dolinsky</title>
+    <link rel="stylesheet" href="styles/main.css">
+   
+</head>
+
+<body>
+    <div class="karta">
+        <h1>Calculate your tip</h1>
+<form class="tipForm">
+
+
+   
+
+        <label>
+            <span>How much was your bill?</span>
+            <input id="billValue"  type="text" placeholder="Eur" maxlength="5" />
+        </label>
+        <label class="tipSelector">
+            <span style="width: 175px">How was your service?</span>
+            <select id="servicee" class="service">
+                <option  disabled selected value="0"> Choose an Option </option>
+                <option value="0.01" >Tarrible</option>
+                <option value="0.2">OK</option>
+                <option value="0.5">Good</option>
+                <option value="0.7">Super</option>
+            </select>
+        </label>
+
+        <label>
+            <span>How many people are sharing the bill? </span>
+            <input id="inputShareBill" type="text" placeholder="Number of people" maxlength="2" />
+        </label>
+
+        <button type="button" id="calculate">Calculate</button>
+    </form>
+    </div>
+    
+
+</body>
+<script type="text/javascript" src="scripts/index.js"></script>
+
+</html>
