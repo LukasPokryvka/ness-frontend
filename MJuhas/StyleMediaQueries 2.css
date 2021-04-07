@@ -1,0 +1,18 @@
+@media screen and (max-width: 800px) {
+    header {
+        display: block;
+        padding-bottom: 20px;
+    }
+    .headerSelfie {
+        margin: 0 auto;
+    }
+    .wrap {
+        display: block;
+    }
+    .wrapLeft {
+        margin: auto 20px;
+    }
+    .wrapRight {
+        display: none;
+    }
+}

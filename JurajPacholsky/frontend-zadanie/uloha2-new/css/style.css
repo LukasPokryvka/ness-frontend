@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;500;700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+
+}
+
+body{
+    background-color: rgb(233, 234, 236);
+    font-family: 'Raleway', sans-serif;
+    color: rgb(175, 175, 175);
+}
+
+header{
+    width: 700px;
+    height: 100%;
+    margin: 100px auto 20px auto;
+    text-align: center;
+}
+
+
+header img{
+    width: 100%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+header p{
+    position: absolute;
+    top: 315px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    color: white;
+}
+
+header h1{
+    position: absolute;
+    top: 220px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+    color: rgb(0, 0, 0);
+    background: white;
+    border-radius: 20px;
+    padding: 10px 10px;
+
+
+}
+/* ADD TO DO */
+main{
+    width: 700px;
+    height: 100%;
+    margin: 20px auto;  
+}
+
+main ul li{
+    display: flex;
+}
+
+.addToDo{
+    /* border: 1px solid red; */
+    width: 100%;
+    height: 40px;
+    margin-bottom: 20px;
+}
+
+input{
+    height: 30px;
+    width: 70%;
+    background: rgb(255, 255, 255);
+    border: 0;
+    font-size: 16px;
+    margin-top: 5px;
+    margin-left: 5px;
+    border: 1px solid rgb(231, 231, 231);
+    border-radius: 13px;
+}
+
+input[type=text] {
+    padding-left:15px;
+    color: rgb(226, 226, 226);
+  }
+
+button{
+    height: 30px;
+    width: 100px;
+    float: right;
+    margin-top: 5px;
+    background: #188a14;
+    border-radius: 5px;
+    color: white;
+    font-size: 14px;
+    border: 0px;
+}
+
+.listToDo button{
+    border-radius: 200px;
+    width: 10px;
+    height: 10px;
+    border: 0px;
+    background: white;
+    margin-top: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+
+}
+
+.listToDo p{
+    font-size: 16px;
+    margin-top: 10px;
+    color: rgb(175, 175, 175);
+}
+
+.listToDo ul li{
+    width: 100%;
+    height: 40px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.16);
+    margin-bottom: 10px;
+}
+
+.listToDo ul li p{
+    width: 200px;
+    margin-right: 400px;
+}
+.listToDo ul li i{
+    margin-top: 10px;
+}
+li:hover{
+    background-color: #e0e0e0;
+}
+.checked{
+    text-decoration: line-through;
+    background-color: #c5c5c5;
+}
+button:hover{
+    background-color: #0f5c0c;
+}
+
+/* tablet device */
+@media only screen and (min-width: 550px) and (max-width: 799px) {
+
+header{
+    width: 90%;
+}
+
+main{
+    width: 100%;
+}
+
+.listToDo{
+    width: 90%;
+    padding-left: 5%;
+}
+
+.listToDo ul li p{
+    width: 200px;
+    margin-right: 400px;
+}
+.addToDo{
+    width: 90%;
+    margin: 10px auto 20px auto;
+    text-align: center;
+}
+}
+

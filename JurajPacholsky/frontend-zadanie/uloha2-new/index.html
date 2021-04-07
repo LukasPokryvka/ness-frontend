@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/1031efd8d2.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <header>
+
+        <h1>To-Do List</h1>
+        <p id="date">Actualy date</p>
+        <img src="img/2.jpg" alt="header">
+        
+
+    </header>
+
+    <main>
+        <div class="addToDo">
+            <i class="fas fa-plus fa-lg"></i>
+            <input id="todos" type="text" placeholder="Ad to do">
+            <button id="btn" onclick="addToList()">Send</button>
+        </div>
+        <div class="listToDo">
+            <ul id="list">
+            </ul>
+        </div>
+    </main>
+    
+    <script src="js/app.js"></script>
+</body>
+</html>
