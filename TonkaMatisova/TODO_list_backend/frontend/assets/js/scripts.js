@@ -16,7 +16,7 @@ function todosFromServerOnPage() {
     });
 }
 
-async function addTodoOnServer(itemTitle) {
+function addTodoOnServer(itemTitle) {
     /*
        fetch API (POST)
      */
@@ -35,6 +35,7 @@ async function addTodoOnServer(itemTitle) {
     fetch(url, param).then(data => {
         return data.json()
     }).then(response => {
+        todosFromServerOnPage();
         console.log(response);
     }).catch(error => {
         console.log(error);
@@ -48,15 +49,44 @@ function deleteTodoOnServer(id) {
     fetch(url + '/' + id, { method: 'DELETE' }).then(data => {
         return data.json()
     }).then(response => {
+        todosFromServerOnPage();
         console.log(response);
     }).catch(error => {
         console.log(error);
     });
 }
 
+function markTodoAsCompleteOnServer(todo) {
+    /*
+       fetch API (POST)
+     */
+    const dataToPost = {
+        itemTitle: todo.itemTitle,
+        isComplete: true
+    };
+    const param = {
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8'
+        },
+        body: JSON.stringify(dataToPost),
+        method: 'PUT'
+    };
+
+    fetch(url + '/' + todo.id, param).then(data => {
+        return data.json()
+    }).then(response => {
+        todosFromServerOnPage();
+        console.log(response);
+    }).catch(error => {
+        console.log(error);
+    });
+}
+
+
 /*
    Code for interacting with page
 */
+
 const list = document.getElementById("listTODOs");
 const addForm = document.forms["newTODO"];
 const formInput = addForm["newItem"];
@@ -70,7 +100,7 @@ function addItem() {
     }
 
     formInput.value = "";
-    addTodoOnServer(newTODO).then(() => todosFromServerOnPage());
+    addTodoOnServer(newTODO);
 }
 
 function createLiElement(todo) {
@@ -82,20 +112,18 @@ function createLiElement(todo) {
     const removeP = document.createElement("p");
     removeP.appendChild(document.createTextNode("X"));
     removeP.classList.add("remove");
-    removeP.onclick = () => {
-        deleteTodoOnServer(todo.id);
-        list.removeChild(newItem);
-    };
+    removeP.onclick = () => { deleteTodoOnServer(todo.id); };
     newItem.appendChild(removeP);
 
     if (todo.isComplete) {
         newItem.style.backgroundColor = "lightgreen";
     } else {
-        newItem.onclick = () => newItem.style.backgroundColor = "lightgreen";
+        newItem.onclick = () => {
+            markTodoAsCompleteOnServer(todo);
+        };
     }
 
     newItem.id = todo.id;
-
     return newItem;
 }
 
