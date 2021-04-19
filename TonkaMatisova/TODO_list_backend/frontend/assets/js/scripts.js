@@ -41,6 +41,19 @@ async function addTodoOnServer(itemTitle) {
     });
 }
 
+function deleteTodoOnServer(id) {
+    /*
+       fetch API (DELETE)
+     */
+    fetch(url + '/' + id, { method: 'DELETE' }).then(data => {
+        return data.json()
+    }).then(response => {
+        console.log(response);
+    }).catch(error => {
+        console.log(error);
+    });
+}
+
 /*
    Code for interacting with page
 */
@@ -69,7 +82,10 @@ function createLiElement(todo) {
     const removeP = document.createElement("p");
     removeP.appendChild(document.createTextNode("X"));
     removeP.classList.add("remove");
-    removeP.onclick = () => list.removeChild(newItem);
+    removeP.onclick = () => {
+        deleteTodoOnServer(todo.id);
+        list.removeChild(newItem);
+    };
     newItem.appendChild(removeP);
 
     if (todo.isComplete) {
