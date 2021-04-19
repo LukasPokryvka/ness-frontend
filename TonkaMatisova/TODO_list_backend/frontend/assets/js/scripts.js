@@ -1,17 +1,49 @@
 const url = 'http://localhost:3005/todos';
 
-/*
-  fetch API (GET)
- */
-fetch(url).then(data => {
-    return data.json();
-}).then(response => {
-    for (let i = 0; i < response.length; i++) {
-        list.appendChild(createLiElement(response[i].itemTitle, response[i].isComplete));
-    }
-});
+todosFromServerOnPage();
 
-// code for interacting with page
+function todosFromServerOnPage() {
+    /*
+        fetch API (GET)
+    */
+    fetch(url).then(data => {
+        return data.json();
+    }).then(response => {
+        list.innerHTML = ''; // for delete all children elements
+        for (let i = 0; i < response.length; i++) {
+            list.appendChild(createLiElement(response[i]));
+        }
+    });
+}
+
+async function addTodoOnServer(itemTitle) {
+    /*
+       fetch API (POST)
+     */
+    const dataToPost = {
+        itemTitle: itemTitle,
+        isComplete: false
+    };
+    const param = {
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8'
+        },
+        body: JSON.stringify(dataToPost),
+        method: 'POST'
+    };
+
+    fetch(url, param).then(data => {
+        return data.json()
+    }).then(response => {
+        console.log(response);
+    }).catch(error => {
+        console.log(error);
+    });
+}
+
+/*
+   Code for interacting with page
+*/
 const list = document.getElementById("listTODOs");
 const addForm = document.forms["newTODO"];
 const formInput = addForm["newItem"];
@@ -25,15 +57,13 @@ function addItem() {
     }
 
     formInput.value = "";
-
-    const newItem = createLiElement(newTODO, false);
-    list.appendChild(newItem);
+    addTodoOnServer(newTODO).then(() => todosFromServerOnPage());
 }
 
-function createLiElement(itemTitle, isComplete) {
+function createLiElement(todo) {
     const newItem = document.createElement("li");
     const firstP = document.createElement("p");
-    firstP.appendChild(document.createTextNode(itemTitle));
+    firstP.appendChild(document.createTextNode(todo.itemTitle));
     newItem.appendChild(firstP);
 
     const removeP = document.createElement("p");
@@ -42,11 +72,13 @@ function createLiElement(itemTitle, isComplete) {
     removeP.onclick = () => list.removeChild(newItem);
     newItem.appendChild(removeP);
 
-    if (isComplete) {
+    if (todo.isComplete) {
         newItem.style.backgroundColor = "lightgreen";
     } else {
         newItem.onclick = () => newItem.style.backgroundColor = "lightgreen";
     }
+
+    newItem.id = todo.id;
 
     return newItem;
 }
