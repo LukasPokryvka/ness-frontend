@@ -50,7 +50,7 @@ class Todos {
         const newTodo = {
             "id": this.nextID(),
             "itemTitle": todo["itemTitle"],
-            "isComplete": "false"
+            "isComplete": false
         };
         this.todos.push(newTodo);
         return newTodo;

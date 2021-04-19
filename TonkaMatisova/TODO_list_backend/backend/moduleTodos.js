@@ -7,7 +7,6 @@ const routerTodos = express.Router();
 routerTodos.route("/todos")
     // Lists all TODOs in TODO list
     .get(async(req, res) => {
-        res.setHeader('Access-Control-Allow-Origin', "*");
         res.send(todos.getAllTodos());
     })
     // Create new todo
