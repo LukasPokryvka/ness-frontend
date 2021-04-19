@@ -6,17 +6,17 @@ class Todos {
         this.todos = [{
                 "id": 1,
                 "itemTitle": "Don't Panic",
-                "isComplete": "true"
+                "isComplete": true
             },
             {
                 "id": 2,
                 "itemTitle": "Edit Meeting",
-                "isComplete": "false"
+                "isComplete": false
             },
             {
                 "id": 3,
                 "itemTitle": "Go Over 96Ages",
-                "isComplete": "false"
+                "isComplete": false
             }
         ];
     }
