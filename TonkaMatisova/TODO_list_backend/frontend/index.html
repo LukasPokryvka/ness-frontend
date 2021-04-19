@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+
+    <title>TO-DOS</title>
+</head>
+
+<body>
+    <header>
+        <h1>Work TO-DOs</h1>
+        <p id="info">
+            Enter text into input field to add items to your list (max. 28 charakters).
+        </p>
+        <p id="complete">Click the item to mark it as complete.</p>
+        <p id="remove">Click the "X" to remove the item from your list.</p>
+    </header>
+    <main>
+        <section id="form">
+            <form id="newTODO">
+                <input id="newItem" type="text" placeholder="New item...">
+                <button id="addButton" type="button" class="fa fa-pencil" onclick="addItem()"></button>
+            </form>
+        </section>
+        <section id="TODOs">
+            <ul id="listTODOs">
+            </ul>
+        </section>
+    </main>
+
+    <script src="./assets/js/scripts.js"></script>
+</body>
+
+</html>
