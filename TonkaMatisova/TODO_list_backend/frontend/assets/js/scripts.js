@@ -58,7 +58,7 @@ function deleteTodoOnServer(id) {
 
 function markTodoAsCompleteOnServer(todo) {
     /*
-       fetch API (POST)
+       fetch API (PUT)
      */
     const dataToPost = {
         itemTitle: todo.itemTitle,
