@@ -1,0 +1,5 @@
+//delete item from list
+function remove_item(selected_item) {
+    deleteFromList(selected_item.parentElement.id)
+    // selected_item.parentElement.remove();
+}
