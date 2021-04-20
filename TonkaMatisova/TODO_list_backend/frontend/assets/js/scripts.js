@@ -118,7 +118,7 @@ function createLiElement(todo) {
     if (todo.isComplete) {
         newItem.style.backgroundColor = "lightgreen";
     } else {
-        newItem.onclick = () => {
+        firstP.onclick = () => {
             markTodoAsCompleteOnServer(todo);
         };
     }
