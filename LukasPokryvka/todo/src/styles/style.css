@@ -1,0 +1,14 @@
+* {
+	box-sizing: border-box;
+}
+
+html {
+	font-family: 'Roboto', sans-serif;
+}
+
+body {
+	min-height: 100vh;
+	background-color: #845ec2;
+	display: flex;
+	justify-content: center;
+}
