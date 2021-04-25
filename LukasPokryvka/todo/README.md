@@ -13,6 +13,6 @@ npm run serve
 
 ## In second terminal, enter src folder and run backend
 ```
-cd src
+cd todo/src
 node be.js
 ```
