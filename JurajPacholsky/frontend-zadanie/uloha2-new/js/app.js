@@ -7,7 +7,7 @@ const fav = document.getElementById('fabicon');
 
 // listener on ENTER value
 input.addEventListener("keyup", function(event) {
-    if (event.keyCode === 13) {
+    if (event.keyCode === 13 && input.value != "") {
         event.preventDefault();
         document.getElementById("btn").click();
     }
@@ -19,9 +19,9 @@ list.onclick = functionToDone;
 
 function functionToDone(ev){
     if(ev.target.classList == 'checked'){
-        // setToUnDone(ev.target.id);
+        setToUnDone(ev.target.id);
     }else{
-        // setToDone(ev.target.id)
+        setToDone(ev.target.id)
     }
     if (ev.target.tagName == 'LI') {
         ev.target.classList.toggle('checked');
@@ -39,6 +39,9 @@ const getAllTasks = () =>{
           li.id = element.id;
           var code = "<button id='btn1'></button>" + "<p>" + element.value + "</p>" + "<i class='far fa-trash-alt' onclick='deleteFromList(this.parentElement.id)'></i>";
   
+         if(element.done == "true"){
+             li.classList.toggle('checked');
+         }
           li.innerHTML = code;
           list.insertBefore(li, list.childNodes[0]);
           input.value = '';
