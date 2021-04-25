@@ -5,15 +5,14 @@
 npm install
 ```
 
-### Compiles and hot-reloads for development
+## Enter app folder and run frontend
 ```
+cd todo
 npm run serve
 ```
 
-### Compiles and minifies for production
+## In second terminal, enter src folder and run backend
 ```
-npm run build
+cd src
+node be.js
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
