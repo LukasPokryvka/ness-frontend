@@ -16,3 +16,8 @@ npm run serve
 cd todo/src
 node be.js
 ```
+
+## In your browser, open app and try it
+```
+http://localhost:8080
+```
