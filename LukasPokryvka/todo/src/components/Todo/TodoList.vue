@@ -1,6 +1,6 @@
 <template>
 	<section>
-		<ul>
+		<transition-group name="todos" tag="ul">
 			<TodoItem
 				v-for="todo in state.allTodos"
 				:key="todo.id"
@@ -9,7 +9,7 @@
 				:todoId="todo.id"
 				@click="toggleDoneStatus(todo.id, todo.done)"
 			/>
-		</ul>
+		</transition-group>
 	</section>
 </template>
 
@@ -76,5 +76,15 @@ ul {
 	padding: 0;
 	margin: 3rem 0;
 	list-style: none;
+}
+
+.todos-enter-active,
+.todos-leave-active {
+	transition: all 0.15s;
+}
+.todos-enter-from,
+.todos-leave-to {
+	opacity: 0;
+	transform: scale(0.75);
 }
 </style>
