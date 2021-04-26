@@ -1,0 +1,23 @@
+# todo-list
+
+## Project setup
+```
+npm install
+```
+
+## Enter app folder and run frontend
+```
+cd todo
+npm run serve
+```
+
+## In second terminal, enter src folder and run backend
+```
+cd todo/src
+node be.js
+```
+
+## In your browser, open app and try it
+```
+http://localhost:8080
+```

@@ -1,0 +1,13 @@
+{
+    "baseUrl": "http://dummy.restapiexample.com/api/v1",
+    "env": {
+      "client_secret" : "",
+      "client_id":""
+    },
+     "db": {
+      "user": "",
+      "password": "",
+      "host": "",
+      "database": ""
+     }
+  }
