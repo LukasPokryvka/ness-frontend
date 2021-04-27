@@ -16,7 +16,7 @@ let updateTask = (idOfTask, updateData) => fetch("http://localhost:3001/" + idOf
         'Content-type': 'application/json; charset=UTF-8'
     },
     body: JSON.stringify(updateData)
-})
+}).then(getToDoList())
 
 // POST update task by ID from toDoList
 let postTask = (data) => fetch("http://localhost:3001/", {
@@ -25,7 +25,7 @@ let postTask = (data) => fetch("http://localhost:3001/", {
         'Content-type': 'application/json; charset=UTF-8'
     },
     body: JSON.stringify(data)
-})
+}).then(getToDoList())
 
 // Render funtion
 let renderData = (data) => {
@@ -58,30 +58,29 @@ document.getElementById("toDoList").addEventListener("click", async function(e) 
 });
 
 // handler for notice completing task - UPDATE Request
-document.getElementById("toDoList").addEventListener("click", async function(e) {
+document.getElementById("toDoList").addEventListener("click", function(e) {
     if (e.target && e.target.nodeName == "INPUT") {
         let idOfTask = e.path[1].id
         let updateData = {
             "title": e.path[1].childNodes[3].childNodes[0].data,
             "completed": e.path[0].checked
         }
-        await updateTask(idOfTask, updateData)
-        await getToDoList()
+        updateTask(idOfTask, updateData)
+
     }
 });
 
 // handler for post task - POST Request
-document.getElementById("myInput").addEventListener("keyup", async function(e) {
+document.getElementById("myInput").addEventListener("keyup", function(e) {
     data = {
         "title": document.getElementById("myInput").value,
         "completed": false
     }
     if (e.code == "Enter" && data.title !== "") {
-        await postTask(data)
         document.getElementById("myInput").value = ""
-        await getToDoList()
-
+        postTask(data)
+        getToDoList()
     }
 });
 
-document.getElementById("body").onload = getToDoList() // GET Request of all task from toDoList to render function
+getToDoList() // GET Request of all task from toDoList to render function

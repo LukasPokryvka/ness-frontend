@@ -3,31 +3,55 @@ const app = express()
 const port = 3001
 const Joi = require('joi'); // create joi schceme
 const cors = require('cors');
-
 app.use(cors())
 
 const fs = require('fs'); // read from files
-var jsonData = fs.readFileSync('database.json');
-var database = JSON.parse(jsonData);
+var jsonData = fs.readFileSync('dataFromFile.json');
+var dataFromFile = JSON.parse(jsonData);
 
 //const bp = require('body-parser') // body parser and read from body via via JSON
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
+
+const { Sequelize, Model, DataTypes, Op } = require('sequelize');
+const sequelize = new Sequelize('sqlite::memory');
+class Person extends Model {};
+
+Person.init({
+    id: { type: DataTypes.INTEGER, primaryKey: true, }, //autoIncrement: true 
+    title: { type: DataTypes.STRING },
+    completed: { type: DataTypes.BOOLEAN },
+
+}, {
+    sequelize,
+    modelName: 'Person'
+});
+
+async function createTable() {
+
+    await Person.sync();
+    //sequelize.sync();
+
+    await Person.bulkCreate(dataFromFile, { validate: true });
+    // Load data from file and create table of them
+
+}
+createTable();
 // request function
-app.get("/", (req, res) => {
-    res.send(database)
+app.get("/", async(req, res) => {
+    await Person.sync();
+    let personList = await Person.findAll();
+    let content = personList.map(x => x.toJSON())
+    res.send(content)
 })
 
-app.post("/", (req, res) => { // post  create a new task
+app.post("/", async(req, res) => { // post  create a new task
 
     if (isValidTask(req.body)) {
-
-        let newTask = {...req.body, "id": Math.max(...database.map(item => item.id)) + 1 }
-        database.push(newTask)
-        fs.writeFileSync('database.json', (JSON.stringify(database)));
+        await Person.sync();
+        await Person.create({ title: req.body.title, completed: req.body.completed });
         res.status(200)
-            .send(database)
 
     } else {
         res.status(405)
@@ -35,23 +59,22 @@ app.post("/", (req, res) => { // post  create a new task
     }
 })
 
-.put("/:id", (req, res) => { // put  upgrate a task
 
-    let searchId = database.findIndex(item => item.id == req.params.id)
+.put("/:id", async(req, res) => { // put  upgrate a task
+
+
 
     if (!/^[0-9]+$/.test(req.params.id)) {
         res.status(400)
             .send(" Invalid ID format supplied")
-    } else if (searchId == -1) {
-        res.status(404)
-            .send("Task not found")
-    }
+    } // chyba podmienka ak sa ID nenachadza v db - doštuduj 
 
     if (isValidTask(req.body)) {
-        Object.assign(database[searchId], {...req.body, "id": req.params.id })
-        fs.writeFileSync('database.json', (JSON.stringify(database)));
+        await Person.sync();
+        await Person.update({ completed: req.body.completed }, { where: { id: req.params.id } });
+
         res.status(200)
-            .send(database[searchId])
+
     } else {
         res.status(405)
             .send("Update task not valid", req.body)
@@ -59,30 +82,18 @@ app.post("/", (req, res) => { // post  create a new task
     }
 })
 
-app.delete("/:id", (req, res) => {
-
-    let searchId = database.findIndex(item => item.id == req.params.id)
+app.delete("/:id", async(req, res) => {
 
     if (!/^[0-9]+$/.test(req.params.id)) {
         res.status(400)
             .send(" Invalid ID format supplied")
-    } else if (searchId > -1) {
-        let deleteTask = database[searchId]
-        database.splice(searchId, 1)
-        fs.writeFileSync('database.json', (JSON.stringify(database)));
-        res.status(200)
-            .send(deleteTask)
+    } // chyba podmienka ak sa ID nenachadza v db - doštuduj 
 
-    } else {
-        res.status(404)
-            .send("Task not found")
-    }
-
+    await Person.destroy({ where: { id: req.params.id } })
+    res.send(200)
 })
 
 const isValidTask = (task) => {
-
-
     const taskSchema = Joi.object({
         title: Joi.string().required(),
         completed: Joi.boolean().required()
