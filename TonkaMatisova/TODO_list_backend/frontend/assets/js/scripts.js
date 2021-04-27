@@ -1,4 +1,4 @@
-const url = 'http://localhost:3005/todos';
+const url = 'http://localhost:3007/todos';
 
 todosFromServerOnPage();
 
@@ -9,6 +9,8 @@ function todosFromServerOnPage() {
     fetch(url).then(data => {
         return data.json();
     }).then(response => {
+        // console.log(response)
+        console.log(typeof(list) , list)
         list.innerHTML = ''; // for delete all children elements
         for (let i = 0; i < response.length; i++) {
             list.appendChild(createLiElement(response[i]));

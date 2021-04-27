@@ -5,7 +5,7 @@ class Todos {
     constructor() {
         this.todos = [{
                 "id": 1,
-                "itemTitle": "Don't Panic",
+                "itemTitle": "Don't Panickooo",
                 "isComplete": true
             },
             {
