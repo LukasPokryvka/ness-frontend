@@ -51,7 +51,7 @@ document.getElementById("toDoList").addEventListener("click", async function(e) 
 
     if (e.target && e.target.nodeName == "BUTTON") {
         let idOfTask = e.path[1].id
-        await deleteTask(idOfTask) // request to delete task from toDoList 
+        await deleteTask(idOfTask)
         document.getElementById(idOfTask).remove() // only for effect
         await getToDoList()
     }
@@ -83,4 +83,4 @@ document.getElementById("myInput").addEventListener("keyup", function(e) {
     }
 });
 
-getToDoList() // GET Request of all task from toDoList to render function
+getToDoList() // GET Request of all task from toDoList to first render of webside
